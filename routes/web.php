@@ -2,17 +2,18 @@
 
 use App\Http\Controllers\{
     DashboardController,
+    LandingPageController,
     PermissionController,
     PermissionGroupController,
     RoleController,
+    SampahController,
     SettingController,
     UserController
 };
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
+Route::get('/monitoring', [LandingPageController::class, 'monitoring'])->name('landingpage.monitoring');
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -75,5 +76,10 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/setting', 'index')->name('setting.index');
             Route::put('/setting/{setting}', 'update')->name('setting.update');
         });
+    });
+
+    Route::group(['middleware' => ['permission:Sampah Index']], function () {
+        Route::get('/trash/data', [SampahController::class, 'data'])->name('trash.data');
+        Route::resource('/trash', SampahController::class);
     });
 });

@@ -12,7 +12,22 @@ class SampahController extends Controller
      */
     public function index()
     {
-        //
+        return view('sampah.index');
+    }
+
+    public function data()
+    {
+        $query = Sampah::all();
+        return datatables($query)
+            ->addIndexColumn()
+            ->editColumn('category', function ($query) {
+                return $query->category->name;
+            })
+            ->addColumn('action', function () {
+                return '';
+            })
+            ->escapeColumns([])
+            ->make(true);
     }
 
     /**

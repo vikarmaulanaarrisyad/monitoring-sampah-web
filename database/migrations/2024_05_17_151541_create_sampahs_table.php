@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('sampahs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('category_id');
+            $table->bigInteger('kapasitas')->default(0);
+            $table->bigInteger('ketinggian');
             $table->timestamps();
         });
     }

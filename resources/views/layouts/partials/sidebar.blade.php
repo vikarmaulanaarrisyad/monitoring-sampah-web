@@ -43,6 +43,17 @@
                     </li>
                 @endcan
 
+                @can('Dashboard Index')
+                    <li class="nav-item">
+                        <a href="{{ route('trash.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-trash-alt"></i>
+                            <p>
+                                Master Data Sampah
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+
                 @can('Konfigurasi Index')
                     <li class="nav-item">
                         <a href="#" class="nav-link">

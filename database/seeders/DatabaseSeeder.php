@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             RoleTableSeeder::class,
             UserTableSeeder::class,
             SettingSeeder::class,
+            CategoryTableSeeder::class,
+            SampahTableSeeder::class,
+            DataSensorTableSeeder::class
         ]);
     }
 }
