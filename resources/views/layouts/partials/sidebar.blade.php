@@ -59,6 +59,47 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>
                             <p>
+                                Data Jenis Sampah
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" style="display: none">
+                            @can('User Index')
+                                <li class="nav-item">
+                                    <a href="{{ route('users.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Organik</p>
+                                    </a>
+                                </li>
+                            @endcan
+
+                            @can('Role Index')
+                                <li class="nav-item">
+                                    <a href="{{ route('role.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Anorganik</p>
+                                    </a>
+                                </li>
+                            @endcan
+
+                            @can('Permission Index')
+                                <li class="nav-item">
+                                    <a href="{{ route('logam.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Logam</p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
+
+
+                @can('Konfigurasi Index')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>
                                 Konfigurasi
                                 <i class="fas fa-angle-left right"></i>
                             </p>

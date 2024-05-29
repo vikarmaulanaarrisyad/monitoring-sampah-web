@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('data_sensors', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sampah_id');
-            $table->string('value');
+            $table->integer('value');
+            $table->integer('kapasitas');
             $table->string('status');
             $table->timestamps();
         });

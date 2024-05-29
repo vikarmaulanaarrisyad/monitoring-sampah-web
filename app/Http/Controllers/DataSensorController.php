@@ -12,7 +12,19 @@ class DataSensorController extends Controller
      */
     public function index()
     {
-        //
+        return view('datasensor.index');
+    }
+
+    public function data()
+    {
+        $query = DataSensor::all();
+        return datatables($query)
+            ->addIndexColumn()
+            ->addColumn('action', function () {
+                return '';
+            })
+            ->escapeColumns([])
+            ->make(true);
     }
 
     /**

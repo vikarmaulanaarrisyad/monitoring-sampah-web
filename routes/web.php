@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\{
     DashboardController,
+    DataSensorController,
     LandingPageController,
+    LogamController,
     PermissionController,
     PermissionGroupController,
     RoleController,
@@ -82,4 +84,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/trash/data', [SampahController::class, 'data'])->name('trash.data');
         Route::resource('/trash', SampahController::class);
     });
+
+    Route::group(['middleware' => ['permission:Logam Index']], function () {
+    });
+    Route::get('/jenis_sampah/logam', [LogamController::class, 'index'])->name('logam.index');
+    Route::get('/jenis_sampah/logam/data', [LogamController::class, 'data'])->name('logam.data');
+    Route::get('/jenis_sampah/logam/delete_all', [LogamController::class, 'deleteAll'])->name('logam.delete_all');
 });
