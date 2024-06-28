@@ -84,6 +84,7 @@ class ApiDataSendorController extends Controller
     {
         // Mengambil data sensor berdasarkan sampah_id, diurutkan berdasarkan yang terbaru
         $dataSensor = DataSensor::with('sampah')->where('sampah_id', $sampahId)
+            ->orderBy('created_at', 'asc')
             ->latest()
             ->limit(5)
             ->get();
@@ -115,7 +116,7 @@ class ApiDataSendorController extends Controller
     private function tanggal_indonesia(array $tanggalArray)
     {
         return array_map(function ($tanggal) {
-            return Carbon::parse($tanggal)->format('d-m-Y H:i:s');
+            return Carbon::parse($tanggal)->format('Y-m-d H:i:s');
         }, $tanggalArray);
     }
 }
