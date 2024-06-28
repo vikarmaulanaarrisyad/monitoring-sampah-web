@@ -5,16 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\DataSensor;
 use Illuminate\Http\Request;
 
-class LogamController extends Controller
+class AnorganikController extends Controller
 {
     public function data()
     {
-        $logam = DataSensor::with('sampah')
-            ->where('sampah_id', 3)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return datatables($logam)
+        $result = DataSensor::where('sampah_id', 2)->orderBy('created_at', 'desc')->get(); //  anorganik
+        return datatables($result)
             ->addIndexColumn()
             ->editColumn('tanggal', function ($q) {
                 return date('d-m-Y', strtotime($q->created_at));
@@ -43,6 +39,6 @@ class LogamController extends Controller
 
     public function index()
     {
-        return view('datajenissampah.logam.index');
+        return view('datajenissampah.anorganik.index');
     }
 }

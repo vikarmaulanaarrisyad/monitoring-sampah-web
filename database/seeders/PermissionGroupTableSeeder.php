@@ -21,6 +21,9 @@ class PermissionGroupTableSeeder extends Seeder
                 'name' => 'Konfigurasi'
             ],
             [
+                'name' => 'Trash'
+            ],
+            [
                 'name' => 'User'
             ],
             [

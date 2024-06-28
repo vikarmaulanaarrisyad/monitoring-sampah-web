@@ -12,9 +12,7 @@
         <div class="col-lg-12 col-md-12 col-12 col-sm-12">
             <x-card>
                 <x-slot name="header">
-                    <button class="btn btn-sm btn-danger" onclick="deleteData(`{{ route('logam.delete_all') }}`)"><i
-                            class="fas fa-trash"></i> Hapus
-                        Data</button>
+                    Data Sensor Sampah Logam
                 </x-slot>
 
                 <x-table>

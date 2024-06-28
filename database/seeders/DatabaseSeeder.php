@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             SettingSeeder::class,
             CategoryTableSeeder::class,
-            SampahTableSeeder::class,
-            DataSensorTableSeeder::class
+            // SampahTableSeeder::class,
+            // DataSensorTableSeeder::class
         ]);
     }
 }

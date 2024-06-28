@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\{
+    AnorganikController,
     DashboardController,
     DataSensorController,
     LandingPageController,
     LogamController,
+    OrganikController,
     PermissionController,
     PermissionGroupController,
     RoleController,
@@ -80,14 +82,28 @@ Route::group(['middleware' => ['auth']], function () {
         });
     });
 
-    Route::group(['middleware' => ['permission:Sampah Index']], function () {
+    Route::group(['middleware' => ['permission:Trash Index']], function () {
         Route::get('/trash/data', [SampahController::class, 'data'])->name('trash.data');
         Route::resource('/trash', SampahController::class);
     });
 
-    Route::group(['middleware' => ['permission:Logam Index']], function () {
+    Route::group(['middleware' => ['permission:Organik Index']], function () {
+        Route::get('/organik/data', [OrganikController::class, 'data'])->name('organik.data');
+        Route::get('/organik', [OrganikController::class, 'index'])->name('organik.index');
     });
-    Route::get('/jenis_sampah/logam', [LogamController::class, 'index'])->name('logam.index');
-    Route::get('/jenis_sampah/logam/data', [LogamController::class, 'data'])->name('logam.data');
-    Route::get('/jenis_sampah/logam/delete_all', [LogamController::class, 'deleteAll'])->name('logam.delete_all');
+
+    Route::group(['middleware' => ['permission:Anorganik Index']], function () {
+        Route::get('/anorganik/data', [AnorganikController::class, 'data'])->name('anorganik.data');
+        Route::get('/anorganik', [AnorganikController::class, 'index'])->name('anorganik.index');
+    });
+
+    Route::group(['middleware' => ['permission:Anorganik Index']], function () {
+        Route::get('/anorganik/data', [AnorganikController::class, 'data'])->name('anorganik.data');
+        Route::get('/anorganik', [AnorganikController::class, 'index'])->name('anorganik.index');
+    });
+
+    Route::group(['middleware' => ['permission:Logam Index']], function () {
+        Route::get('/logam/data', [LogamController::class, 'data'])->name('logam.data');
+        Route::get('/logam', [LogamController::class, 'index'])->name('logam.index');
+    });
 });

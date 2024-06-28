@@ -15,25 +15,13 @@ class SettingSeeder extends Seeder
     {
         Setting::query()->updateOrCreate(
             [
-                'email' => 'support@w2charity.com'
+                'id' => 1
             ],
             [
-                'email' => 'support@w2charity.com',
-                'phone' => '081232323221',
-                'phone_hours' => 'Senin - Jum\'at, 08:00 s/d 16:00',
-                'owner_name' => 'Administrator',
-                'company_name' => 'W2 Charity',
-                'short_description' => '-',
-                'keyword' => '-',
-                'about' => '-',
-                'address' => '-',
-                'postal_code' => 12345,
-                'city' => '-',
-                'province' => '-',
-                'instagram_link' => '-',
-                'twitter_link' => '-',
-                'fanpage_link' => '-',
-                'google_plus_link' => '-'
+                'nama_aplikasi' => 'Monitoring Sampah',
+                'path_image' => 'default.jpg',
+                'path_image_header' => 'default.jpg',
+                'path_image_footer' => 'default.jpg',
             ]
         );
     }

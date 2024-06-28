@@ -23,6 +23,22 @@ class PermissionTableSeeder extends Seeder
                 'permission_group_id' => PermissionGroup::where('name', 'Konfigurasi')->first()->id,
             ],
             [
+                'name' => 'Trash Index',
+                'permission_group_id' => PermissionGroup::where('name', 'Trash')->first()->id,
+            ],
+            [
+                'name' => 'Organik Index',
+                'permission_group_id' => PermissionGroup::where('name', 'Trash')->first()->id,
+            ],
+            [
+                'name' => 'Anorganik Index',
+                'permission_group_id' => PermissionGroup::where('name', 'Trash')->first()->id,
+            ],
+            [
+                'name' => 'Logam Index',
+                'permission_group_id' => PermissionGroup::where('name', 'Trash')->first()->id,
+            ],
+            [
                 'name' => 'User Index',
                 'permission_group_id' => PermissionGroup::where('name', 'User')->first()->id,
             ],

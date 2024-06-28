@@ -43,7 +43,7 @@
                     </li>
                 @endcan
 
-                @can('Dashboard Index')
+                @can('Trash Index')
                     <li class="nav-item">
                         <a href="{{ route('trash.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-trash-alt"></i>
@@ -52,9 +52,7 @@
                             </p>
                         </a>
                     </li>
-                @endcan
 
-                @can('Konfigurasi Index')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>
@@ -64,25 +62,25 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview" style="display: none">
-                            @can('User Index')
+                            @can('Organik Index')
                                 <li class="nav-item">
-                                    <a href="{{ route('users.index') }}" class="nav-link">
+                                    <a href="{{ route('organik.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Organik</p>
                                     </a>
                                 </li>
                             @endcan
 
-                            @can('Role Index')
+                            @can('Anorganik Index')
                                 <li class="nav-item">
-                                    <a href="{{ route('role.index') }}" class="nav-link">
+                                    <a href="{{ route('anorganik.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Anorganik</p>
                                     </a>
                                 </li>
                             @endcan
 
-                            @can('Permission Index')
+                            @can('Logam Index')
                                 <li class="nav-item">
                                     <a href="{{ route('logam.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -93,7 +91,6 @@
                         </ul>
                     </li>
                 @endcan
-
 
                 @can('Konfigurasi Index')
                     <li class="nav-item">
