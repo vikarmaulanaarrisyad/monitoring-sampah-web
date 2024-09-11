@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
 Route::get('/monitoring', [LandingPageController::class, 'monitoring'])->name('landingpage.monitoring');
+Route::get('/check-token', function () {
+    dd(config('services.telegram.token'));
+});
 
 Route::group(['middleware' => ['auth']], function () {
 
